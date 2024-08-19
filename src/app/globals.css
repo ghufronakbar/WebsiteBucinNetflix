@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -30,4 +30,99 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+
+
+.style-title {
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: 800; /* font-extrabold */
+  letter-spacing: 0.05em; /* tracking-wide */
+}
+
+@media (min-width: 640px) {
+  .style-title {
+    font-size: 2.25rem; /* sm:text-4xl */
+  }
+}
+
+@media (min-width: 768px) {
+  .style-title {
+    font-size: 3rem; /* md:text-5xl */
+  }
+}
+
+@media (min-width: 1024px) {
+  .style-title {
+    font-size: 3rem; /* lg:text-5xl */
+  }
+}
+
+
+.style-content {
+  font-size: 0.875rem; /* text-sm */
+  text-align: justify; /* text-justify */
+}
+
+@media (min-width: 640px) {
+  .style-content {
+    font-size: 1rem; /* sm:text-base */
+  }
+}
+
+
+.style-sub {
+  font-size: 1.25rem; /* text-xl */
+  font-weight: 800; /* font-extrabold */
+  letter-spacing: 0.05em; /* tracking-wide */
+}
+
+@media (min-width: 640px) {
+  .style-sub {
+    font-size: 1.5rem; /* sm:text-2xl */
+  }
+}
+
+@media (min-width: 768px) {
+  .style-sub {
+    font-size: 1.875rem; /* md:text-3xl */
+  }
+}
+
+@media (min-width: 1024px) {
+  .style-sub {
+    font-size: 1.875rem; /* lg:text-3xl */
+  }
+}
+
+
+
+.glow {  
+  color: #fff;  
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 1px #fff, 0 0 20px #fff, 0 0 1px #fff, 0 0 1px #fff, 0 0 1px #fff, 0 0 1px #fff, 0 0 1px #fff;
+  }
+  to {
+    text-shadow: 0 0 1px #fff, 0 0 20px #fff, 0 0 1px #fff, 0 0 1px #fff, 0 0 1px #fff, 0 0 1px #fff, 0 0 1px #fff;
+  }
+}
+
+.container-scroll {
+  display: flex;
+  width: 100%;
+  gap: 0.25rem;    
+}
+.horizontal-scroll{
+  width: 100%;
+  overflow-x: scroll;
+  scrollbar-color: transparent transparent; 
+}
+.horizontal-scroll::-webkit-scrollbar {
+  display: none;
 }
