@@ -72,26 +72,20 @@ body {
 
 
 .style-sub {
-  font-size: 1.25rem; /* text-xl */
+  font-size: 1.125rem; /* text-lg */
   font-weight: 800; /* font-extrabold */
   letter-spacing: 0.05em; /* tracking-wide */
 }
 
 @media (min-width: 640px) {
   .style-sub {
-    font-size: 1.5rem; /* sm:text-2xl */
-  }
-}
-
-@media (min-width: 768px) {
-  .style-sub {
-    font-size: 1.875rem; /* md:text-3xl */
+    font-size: 1.25rem; /* sm:text-xl */
   }
 }
 
 @media (min-width: 1024px) {
   .style-sub {
-    font-size: 1.875rem; /* lg:text-3xl */
+    font-size: 1.5rem; /* lg:text-3xl */
   }
 }
 

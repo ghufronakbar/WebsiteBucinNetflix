@@ -178,8 +178,8 @@ const navItem: NavItem[] = [
     section: "album",
   },
   {
-    title: "Message",
-    section: "message",
+    title: "Note",
+    section: "note",
   },
 ];
 
