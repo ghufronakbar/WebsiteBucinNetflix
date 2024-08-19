@@ -10,8 +10,9 @@ export default function HomePage() {
       <Navbar />
       <HomeSection />
       <AlbumSection />
-      <NoteSection />
+      <NoteSection />      
       <Footer />
     </>
   );
 }
+

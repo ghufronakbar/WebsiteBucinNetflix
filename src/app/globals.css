@@ -91,6 +91,27 @@ body {
 
 
 
+.style-child {
+  font-size: 0.875rem; 
+  font-weight: 500; 
+  letter-spacing: 0.05em; 
+  color: #B3B3B3;
+}
+
+@media (min-width: 640px) {
+  .style-child {
+    font-size: 0.875rem; 
+  }
+}
+
+@media (min-width: 1024px) {
+  .style-child {
+    font-size: 1rem; 
+  }
+}
+
+
+
 .glow {  
   color: #fff;  
   -webkit-animation: glow 1s ease-in-out infinite alternate;
@@ -118,5 +139,19 @@ body {
   scrollbar-color: transparent transparent; 
 }
 .horizontal-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.aspect-tv {
+  aspect-ratio: 5 / 3;
+  object-fit: cover;
+  object-position: center;
+}
+
+.scroll-y-hidden {
+  overflow-y: scroll;  
+}
+
+.scroll-y-hidden::-webkit-scrollbar {
   display: none;
 }
