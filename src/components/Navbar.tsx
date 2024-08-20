@@ -1,13 +1,15 @@
-'use client'; // Mengaktifkan client-side rendering
+'use client'; 
 
 import Image from "next/image";
 import { IoSearch } from "react-icons/io5";
 import { useState, useEffect } from "react";
 import profile from "@/data/profile";
+import Search from "./Search";
 
 const NavMobile = () => {
-  const [activeSection, setActiveSection] = useState('home');
-  const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>('home');
+  const [scrolled, setScrolled] = useState<boolean>(false);
+  const [isVisible, setIsVisible] = useState<boolean>(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -48,10 +50,11 @@ const NavMobile = () => {
             Story of Us
           </h1>
           <div className="flex items-center gap-4">
-            <IoSearch />
+            <IoSearch onClick={() => setIsVisible(true)} />
             <select
               className="bg-transparent text-white outline-none text-sm cursor-pointer text-center"
               value={activeSection}
+              id="nav-select"
               onChange={(e) => {
                 const sectionId = e.target.value;
                 document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
@@ -74,13 +77,15 @@ const NavMobile = () => {
           </div>
         </div>
       </div>
+      <Search isVisible={isVisible} onClose={() => setIsVisible(false)}/>
     </nav>
   );
 };
 
 const NavDekstop = () => {
-  const [activeSection, setActiveSection] = useState('home');
-  const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>('home');
+  const [scrolled, setScrolled] = useState<boolean>(false);
+  const [isVisible, setIsVisible] = useState<boolean>(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -134,8 +139,8 @@ const NavDekstop = () => {
             ))}
           </div>
           <div className="flex items-center gap-8">
-            <IoSearch />
-            <p className="text-sm cursor-pointer">{profile.name}</p>
+            <IoSearch className="cursor-pointer" onClick={() => setIsVisible(true)}/>
+            <p className="text-sm">{profile.name}</p>
             <Image
               src={profile.picture}
               alt="profile"
@@ -146,9 +151,12 @@ const NavDekstop = () => {
           </div>
         </div>
       </div>
+      <Search isVisible={isVisible} onClose={() => setIsVisible(false)}/>
     </nav>
   );
 };
+
+
 
 const Navbar = () => {
   return (

@@ -3,12 +3,21 @@
 import ModalShowImage from "@/components/ModalShowImage";
 import albumImage from "@/data/albumImage";
 import Image from "next/image";
-import { useState } from "react";
+import { useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 
 const AlbumSection = () => {
   const [isVisible, setIsVisible] = useState<boolean>(false);
   const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
   const [currentAlbumIndex, setCurrentAlbumIndex] = useState<number>(0);
+  const searchTerms = useSearchParams();
+  const search: string = searchTerms.get("search") || "";
+
+  useEffect(() => {
+    if (searchTerms.get("search")) {
+      document.getElementById("album")?.scrollIntoView();
+    }
+  }, [searchTerms]);
 
   const handleOpenModal = (albumIndex: number, imageIndex: number) => {
     setCurrentAlbumIndex(albumIndex);
@@ -34,6 +43,27 @@ const AlbumSection = () => {
     }
   };
 
+  const filteredAlbums = albumImage
+    .map((album) => {
+      if (album.title.toLowerCase().includes(search.toLowerCase())) {
+        return album;
+      }
+
+      const filteredImages = album.images.filter((image) =>
+        image.title.toLowerCase().includes(search.toLowerCase())
+      );
+
+      if (filteredImages.length > 0) {
+        return {
+          ...album,
+          images: filteredImages,
+        };
+      }
+
+      return null;
+    })
+    .filter((album) => album !== null);
+
   return (
     <>
       <section
@@ -41,7 +71,7 @@ const AlbumSection = () => {
         id="album"
       >
         <div className="px-4 sm:px-6 md:px-8 lg:px-16 py-4 w-full h-full">
-          {albumImage.map((album, albumIndex) => (
+          {filteredAlbums.map((album, albumIndex) => (
             <div className="w-full my-10 space-y-2" key={albumIndex}>
               <h2 className="style-sub">{album.title}</h2>
               <div className="horizontal-scroll">
@@ -61,13 +91,20 @@ const AlbumSection = () => {
               </div>
             </div>
           ))}
+          {filteredAlbums.length === 0 && (
+            <div className="w-full h-full flex items-center justify-center py-60">
+              <h2 className="style-content text-center">
+                No result found with keyword <b>&quot;{search}&quot;</b>
+              </h2>
+            </div>
+          )}
         </div>
       </section>
 
       {isVisible && (
         <ModalShowImage
           isVisible={isVisible}
-          currentImage={currentImageIndex + 1} // Menampilkan nomor gambar yang dimulai dari 1
+          currentImage={currentImageIndex + 1}
           totalImage={albumImage[currentAlbumIndex].images.length}
           date={albumImage[currentAlbumIndex].images[currentImageIndex].date}
           image={albumImage[currentAlbumIndex].images[currentImageIndex].url}

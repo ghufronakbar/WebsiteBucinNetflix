@@ -39,7 +39,7 @@ const ModalShowImage = ({
     >
       <div
         className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-11/12 md:w-9/12 lg:w-8/12 xl:w-6/12 h-5/6 bg-black scroll-y-hidden"
-        onClick={(e) => e.stopPropagation()} // Ini menghentikan klik di dalam modal agar tidak menutup modal
+        onClick={(e) => e.stopPropagation()} 
       >
         <div className="w-full aspect-video relative">
           <Image
@@ -53,7 +53,7 @@ const ModalShowImage = ({
             <MdNavigateNext
               className="absolute top-1/2 left-0 -translate-y-1/2 text-white text-5xl cursor-pointer hover:text-primary transition-all duration-300 hover:scale-110 drop-shadow-2xl rotate-180"
               onClick={(e) => {
-                e.stopPropagation(); // Hentikan propagasi event klik
+                e.stopPropagation(); 
                 if (onPrev) onPrev();
               }}
             />
@@ -62,7 +62,7 @@ const ModalShowImage = ({
             <MdNavigateNext
               className="absolute top-1/2 right-0 -translate-y-1/2 text-white text-5xl cursor-pointer hover:text-primary transition-all duration-300 hover:scale-110 drop-shadow-2xl"
               onClick={(e) => {
-                e.stopPropagation(); // Hentikan propagasi event klik
+                e.stopPropagation(); 
                 if (onNext) onNext();
               }}
             />
