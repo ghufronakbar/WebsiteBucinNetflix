@@ -41,7 +41,7 @@ const NavMobile = () => {
   return (
     <nav>
       <div
-        className={`w-full h-16 fixed text-white transition-all duration-700 ${
+        className={`w-full h-16 fixed z-40 text-white transition-all duration-700 ${
           scrolled ? 'bg-black' : 'bg-gradient-to-b from-black to-transparent'
         }`}
       >
@@ -117,7 +117,7 @@ const NavDekstop = () => {
   return (
     <nav>
       <div
-        className={`w-full h-16 fixed text-white transition-all duration-700 ${
+        className={`w-full h-16 fixed z-40 text-white transition-all duration-700 ${
           scrolled ? 'bg-black' : 'bg-gradient-to-b from-black to-transparent'
         }`}
       >

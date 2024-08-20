@@ -83,7 +83,7 @@ const AlbumSection = () => {
                       alt={image.title}
                       width={400}
                       height={300}
-                      className="hover:opacity-80 transition-all duration-300 object-cover w-8/12 md:w-5/12 lg:w-4/12 xl:w-3/12 h-40 aspect-video cursor-pointer"
+                      className="hover:opacity-80 hover:z-10 transition-all duration-300 object-cover w-8/12 md:w-5/12 lg:w-4/12 xl:w-3/12 h-40 aspect-video cursor-pointer"
                       onClick={() => handleOpenModal(albumIndex, imageIndex)}
                     />
                   ))}

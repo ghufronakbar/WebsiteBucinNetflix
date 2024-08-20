@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { AiOutlineClose } from "react-icons/ai";
 import { MdNavigateNext } from "react-icons/md";
 
 interface ModalShowImageProps {
@@ -34,11 +35,11 @@ const ModalShowImage = ({
     <div
       className={`${
         isVisible ? "block" : "hidden"
-      } fixed top-0 left-0 w-full h-full bg-black bg-opacity-40 transition-all duration-300 backdrop-blur-sm`}
+      } fixed top-0 left-0 w-full h-full bg-black bg-opacity-40 transition-all duration-300 backdrop-blur-sm z-50`}
       onClick={onClose}
     >
       <div
-        className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-11/12 md:w-9/12 lg:w-8/12 xl:w-6/12 h-5/6 bg-black scroll-y-hidden"
+        className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-11/12 md:w-9/12 lg:w-8/12 xl:w-6/12 h-5/6 bg-black scroll-y-hidden rounded-lg overflow-x-hidden"
         onClick={(e) => e.stopPropagation()} 
       >
         <div className="w-full aspect-video relative">
@@ -49,6 +50,10 @@ const ModalShowImage = ({
             height={720}
             className="w-full h-full object-cover"
           />
+          <div className=" w-7 h-7 lg:w-9 lg:h-9 absolute top-4 right-4 lg:top-6 lg:right-8 cursor-pointer bg-black rounded-full p-2"
+          onClick={onClose}>
+          <AiOutlineClose className="w-full h-full text-white" />
+          </div>
           {currentImage > 1 && (
             <MdNavigateNext
               className="absolute top-1/2 left-0 -translate-y-1/2 text-white text-5xl cursor-pointer hover:text-primary transition-all duration-300 hover:scale-110 drop-shadow-2xl rotate-180"
@@ -68,7 +73,7 @@ const ModalShowImage = ({
             />
           )}
         </div>
-        <div className="px-4 pt-4 flex flex-col">
+        <div className="px-6 sm:px-8 md:px-10 lg:px-12 xl:px-14 py-6 flex flex-col">
           <h2 className="style-sub">{titleSection}</h2>
           <p className="style-child">
             {titleImage} 
@@ -79,13 +84,7 @@ const ModalShowImage = ({
             </p>
           ) : null}
           <p className="style-content mt-2">{imageDescription}</p>
-          <p className="text-xs mt-2 text-lightGray">{date}</p>
-          <button
-            className="bg-primary text-white font-semibold px-4 py-2 flex items-center gap-2 rounded-md hover:bg-white hover:text-black transition-all duration-300 my-4 self-end"
-            onClick={onClose}
-          >
-            Close
-          </button>
+          <p className="text-xs mt-2 text-lightGray">{date}</p>         
         </div>
       </div>
     </div>

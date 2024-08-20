@@ -1,8 +1,13 @@
+"use client";
+
+import ModalShowVideo from "@/components/ModalShowVideo";
 import video from "@/data/video";
 import Image from "next/image";
+import { useState } from "react";
 import { IoMdInformationCircleOutline, IoMdPlay } from "react-icons/io";
 
 const HomeSection = () => {
+  const [isVisible, setIsVisible] = useState<boolean>(false);
   return (
     <section
       className="flex min-h-screen flex-col items-start justify-end text-white"
@@ -26,12 +31,13 @@ const HomeSection = () => {
             <IoMdPlay />
             Play
           </button>
-          <button className="bg-lightGray text-white font-semibold px-4 py-2 flex items-center gap-2 rounded-md bg-opacity-40 hover:bg-opacity-80 transition-all duration-300">
+          <button className="bg-lightGray text-white font-semibold px-4 py-2 flex items-center gap-2 rounded-md bg-opacity-40 hover:bg-opacity-80 transition-all duration-300"  onClick={() => setIsVisible(true)}>
             <IoMdInformationCircleOutline />
             Details
           </button>
         </div>
       </div>
+      <ModalShowVideo isVisible={isVisible} onClose={() => setIsVisible(false)} />
     </section>
   );
 };

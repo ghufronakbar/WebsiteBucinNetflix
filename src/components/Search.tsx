@@ -1,5 +1,5 @@
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { IoSearch } from "react-icons/io5";
 
 interface SearchProps {
@@ -12,6 +12,13 @@ const Search = ({ isVisible, onClose }: SearchProps) => {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (isVisible && inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [isVisible]);
 
   const handleSearch = () => {
     const currentParams = new URLSearchParams(searchParams.toString());
@@ -51,6 +58,7 @@ const Search = ({ isVisible, onClose }: SearchProps) => {
           className="w-full h-full py-4 px-8 rounded-full bg-lightGray text-black outline-none placeholder:text-black"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
+          ref={inputRef}
         />
         <IoSearch
           className="absolute top-1/2 right-4 -translate-y-1/2 text-black text-5xl cursor-pointer hover:text-primary transition-all duration-300 hover:scale-110 drop-shadow-2xl w-6 h-6"

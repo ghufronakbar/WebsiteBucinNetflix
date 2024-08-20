@@ -60,13 +60,13 @@ body {
 
 
 .style-content {
-  font-size: 0.875rem; /* text-sm */
+  font-size: 0.75rem; /* text-xs */
   text-align: justify; /* text-justify */
 }
 
 @media (min-width: 640px) {
   .style-content {
-    font-size: 1rem; /* sm:text-base */
+    font-size: 0.875rem; /* sm:text-sm */
   }
 }
 
