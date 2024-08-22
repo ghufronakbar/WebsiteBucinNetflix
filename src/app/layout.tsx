@@ -23,8 +23,7 @@ export const metadata: Metadata = {
     title: video.title,
     capable: true,
     statusBarStyle: "default",
-  },
-  themeColor: "#000000",
+  },  
   metadataBase: new URL("https://example.com"),
   openGraph: {
     title: video.title,
@@ -46,8 +45,7 @@ export const metadata: Metadata = {
   },
   icons: {
     shortcut: "/favicon.ico",
-  },
-  viewport: "width=device-width, initial-scale=1",
+  },  
 };
 
 export default function RootLayout({

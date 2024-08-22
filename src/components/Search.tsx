@@ -8,17 +8,17 @@ interface SearchProps {
 }
 
 const Search = ({ isVisible, onClose }: SearchProps) => {
-  const [search, setSearch] = useState<string>("");
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
+  const [search, setSearch] = useState<string>(searchParams.get("search") || "");
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     if (isVisible && inputRef.current) {
       inputRef.current.focus();
     }
-  }, [isVisible]);
+  }, [isVisible]);  
 
   const handleSearch = () => {
     const currentParams = new URLSearchParams(searchParams.toString());
