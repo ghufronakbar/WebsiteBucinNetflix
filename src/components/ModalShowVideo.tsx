@@ -9,13 +9,16 @@ interface ModalShowVideoProps {
   isVisible: boolean;
   onClose: () => void;
   onPlayClick: () => void;
+  lang: string;
 }
 
 const ModalShowVideo = ({
   isVisible,
   onClose,
   onPlayClick,
+  lang
 }: ModalShowVideoProps) => {
+  const v = video({ lang });
   return (
     <div
       className={`${isVisible ? "block" : "hidden"
@@ -28,13 +31,13 @@ const ModalShowVideo = ({
       >
         <div className="w-full aspect-video relative">
           <Image
-            src={video.thumbnail}
-            alt={video.title}
+            src={v.thumbnail}
+            alt={v.title}
             width={1280}
             height={720}
             className="w-full h-full object-cover"
           />
-          <h2 className="style-title absolute bottom-16 md:bottom-18 lg:bottom-20 left-8">{video.title}</h2>
+          <h2 className="style-title absolute bottom-16 md:bottom-18 lg:bottom-20 left-8">{v.title}</h2>
           <div className=" w-7 h-7 lg:w-9 lg:h-9 absolute top-4 right-4 lg:top-6 lg:right-8 cursor-pointer bg-black rounded-full p-2"
           onClick={onClose}>
           <AiOutlineClose className="w-full h-full text-white" />
@@ -47,29 +50,30 @@ const ModalShowVideo = ({
         <div className="px-6 sm:px-8 md:px-10 lg:px-12 xl:px-14 py-6 flex flex-row gap-4 md:gap-6 lg:gap-8 items-start">
           <div className="w-2/3 flex flex-col items-start">
             <div className="w-full flex flex-row items-center gap-2">
-              <p className="style-child">{video.year}</p>
-              <p className="style-child">{video.duration}</p>
+              <p className="style-child">{v.year}</p>
+              <p className="style-child">{v.duration}</p>
               <div className="border border-lightGray px-2 rounded-sm">
-                <p className="!text-xs style-child">{video.quality}</p>
+                <p className="!text-xs style-child">{v.quality}</p>
               </div>
             </div>
             <div className="border border-lightGray px-2 rounded-sm">
-              <p className="!text-sm style-child">{video.rated}</p>
+              <p className="!text-sm style-child">{v.rated}</p>
             </div>
-            <p className="style-content mt-4 !text-start">
-              {video.description}
+            <p className="style-content mt-4 !text-start" dangerouslySetInnerHTML={{
+              __html: v.description.replace(/\n/g, "<br />"),
+            }}>              
             </p>
           </div>
           <div className="w-1/3 flex flex-col items-start gap-4">
             
             <p className="style-content !text-lightGray !tracking-widest !text-start">Cast:{" "}
-            {video.casts.map((item, index) => <span className="text-white" key={index}>{item+ (index < video.casts.length - 1 ? ", " : " ")}</span>)}
+            {v.casts.map((item, index) => <span className="text-white" key={index}>{item+ (index < v.casts.length - 1 ? ", " : " ")}</span>)}
             </p>
             <p className="style-content !text-lightGray !tracking-widest !text-start">Genres:{" "}
-            {video.genres.map((item, index) => <span className="text-white" key={index}>{item+ (index < video.casts.length - 1 ? ", " : " ")}</span>)}
+            {v.genres.map((item, index) => <span className="text-white" key={index}>{item+ (index < v.casts.length - 1 ? ", " : " ")}</span>)}
             </p>
             <p className="style-content !text-lightGray !tracking-widest !text-start">This movie is:{" "}
-            {video.types.map((item, index) => <span className="text-white" key={index}>{item+ (index < video.casts.length - 1 ? ", " : " ")}</span>)}
+            {v.types.map((item, index) => <span className="text-white" key={index}>{item+ (index < v.casts.length - 1 ? ", " : " ")}</span>)}
             </p>
             </div>          
         </div>

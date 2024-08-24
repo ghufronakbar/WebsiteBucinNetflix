@@ -8,11 +8,12 @@ import { IoMdInformationCircleOutline, IoMdPlay } from "react-icons/io";
 import LoadingComponent from "@/components/LoadingComponent"; 
 import { useRouter } from "next/navigation";
 
-const HomeSection = () => {
+const HomeSection = ({ lang }: { lang: string }) => {
   const [isVisible, setIsVisible] = useState<boolean>(false);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [showLoading, setShowLoading] = useState<boolean>(false);
-  const router = useRouter();
+  const router = useRouter();  
+  const v = video({ lang });
 
   const handlePlayClick = () => {
     setIsPlaying(true);
@@ -35,17 +36,18 @@ const HomeSection = () => {
       id="home"
     >
       <Image
-        src={video.thumbnail}
-        alt={video.title}
-        width={1200}
-        height={676}
-        className="absolute left-0 top-0 w-screen h-screen object-cover -z-50"
+        src={v.thumbnail}
+        alt={v.title}
+        width={3840}
+        height={2160}
+        priority
+        className="absolute left-0 top-0 w-screen h-screen object-cover -z-50 object-left"
       />
       <div className="px-4 sm:px-6 md:px-8 lg:px-16 pb-36 w-full sm:w-2/3 lg:w-1/2 space-y-4">
-        <h1 className="style-title">{video.title}</h1>
-        <p className="style-content">{video.subtitle}</p>
+        <h1 className="style-title">{v.title}</h1>
+        <p className="style-content">{v.subtitle}</p>
         <p className="style-content">
-          Click &quot;Play&quot; to watch the video
+          {lang === "en" ? `Click "Play" to watch the video` : `Klik "Mulai" untuk melihat video`}          
         </p>
         <div className="w-full flex flex-row items-start gap-4">
           <button
@@ -53,14 +55,14 @@ const HomeSection = () => {
             onClick={handlePlayClick}
           >
             <IoMdPlay />
-            Play
+            {lang === "en" ? "Play" : "Mulai"}
           </button>
           <button
             className="bg-lightGray text-white font-semibold px-4 py-2 flex items-center gap-2 rounded-md bg-opacity-40 hover:bg-opacity-80 transition-all duration-300"
             onClick={() => setIsVisible(true)}
           >
             <IoMdInformationCircleOutline />
-            Details
+            Detail
           </button>
         </div>
       </div>
@@ -68,6 +70,7 @@ const HomeSection = () => {
         isVisible={isVisible}
         onClose={() => setIsVisible(false)}
         onPlayClick={handlePlayClick}
+        lang={lang}
       />
     </section>
       {showLoading && (

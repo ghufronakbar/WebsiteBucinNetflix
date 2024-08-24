@@ -16,6 +16,11 @@ const config: Config = {
         lightGray: "#B3B3B3",
         white: "#FFFFFF",
       },
+      objectPosition: {
+        'left': 'left',
+        'center': 'center',
+        'right': 'right',       
+      }
     },
   },
   plugins: [],

@@ -2,12 +2,15 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
 import video from "@/data/video";
+import profile from "@/data/profile";
 
 const roboto = Roboto({ subsets: ["latin"], weight: ["400", "500", "700"] });
 
-export const metadata: Metadata = {
-  title: video.title,
-  description: video.subtitle,
+const v =video({ lang: "en" });
+
+export const metadata: Metadata = {  
+  title: v.title,
+  description: v.subtitle,
   robots: {
     index: true,
     follow: true,
@@ -20,19 +23,18 @@ export const metadata: Metadata = {
     },
   },
   appleWebApp: {
-    title: video.title,
+    title: v.title,
     capable: true,
     statusBarStyle: "default",
-  },  
-  metadataBase: new URL("https://example.com"),
+  },    
   openGraph: {
-    title: video.title,
-    description: video.subtitle,
-    url: "https://example.com",
-    siteName: "example.com",
+    title: v.title,
+    description: v.subtitle,
+    url: "https://eremika.vercel.app",
+    siteName: "Clone Netflix | Eremika",
     images: [
       {
-        url: "https://example.com/images/og-image.png",
+        url: "https://eremika.vercel.app/thumbnail.png",
         width: 1200,
         height: 630,
         alt: "Og Image Alt",
@@ -40,12 +42,15 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    title: video.title,
+    title: v.title,
     card: "summary_large_image",
   },
   icons: {
-    shortcut: "/favicon.ico",
+    shortcut: profile.picture,
+    icon: profile.picture,
   },  
+  authors: [{ name: "Lans The Prodigy", url: "https://eremika.vercel.app" }],
+  creator: "Lans The Prodigy",
 };
 
 export default function RootLayout({

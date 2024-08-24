@@ -1,188 +1,762 @@
 import { Album } from "@/models/Album";
 
-const albumImage: Album[] = [
+const albumEn: Album[] = [
   {
     id: 1,
-    title: "1",
-    description:
-      "I wrote this album before I met you. I think it's the best album I've ever seen. I love the way you are, and I love the way you still have me.",
+    title: "When I Met You",
+    description: "When I first saw you, Mikasa, I didn't know our lives would become so intertwined.",
     images: [
       {
         id: 1,
-        title: "2",
-        date: "2022-10-10",
-        description:
-          "I wrote this album before I met you. I think it's the best album I've ever seen. I love the way you are, and I love the way you still have me.",
-        url: "https://res.cloudinary.com/dp7mjhcbk/image/upload/v1724082884/thumbnail_r78mhi.jpg",
-      },
-      {
-        id: 1,
-        title: "2",
-        date: "2022-10-10",
-        description:
-          "I wrote this album before I met you. I think it's the best album I've ever seen. I love the way you are, and I love the way you still have me.",
-        url: "https://res.cloudinary.com/dp7mjhcbk/image/upload/v1724082884/thumbnail_r78mhi.jpg",
-      },
-      {
-        id: 1,
-        title: "2",
-        date: "2022-10-10",
-        description:
-          "I wrote this album before I met you. I think it's the best album I've ever seen. I love the way you are, and I love the way you still have me.",
-        url: "https://res.cloudinary.com/dp7mjhcbk/image/upload/v1724082884/thumbnail_r78mhi.jpg",
-      },
-      {
-        id: 1,
-        title: "2",
-        date: "2022-10-10",
-        description:
-          "I wrote this album before I met you. I think it's the best album I've ever seen. I love the way you are, and I love the way you still have me.",
-        url: "https://res.cloudinary.com/dp7mjhcbk/image/upload/v1724082884/thumbnail_r78mhi.jpg",
+        title: "The First Meeting",
+        description: "When my eyes met yours, something changed. I felt like I needed to protect you, even though I didn't understand why.",
+        url: "/album/1/1.webp",
+        date: "2012-01-15",
       },
       {
         id: 2,
-        title: "3",
-        date: "2022-10-10",
-        description:
-          "I wrote this album before I met you. I think it's the best album I've ever seen. I love the way you are, and I love the way you still have me.",
-        url: "https://res.cloudinary.com/dp7mjhcbk/image/upload/v1724096175/4_U_hbfijf.jpg",
+        title: "The Scarf",
+        description: "I wrapped that red scarf around you, and in that moment, I promised myself I'd keep you safe. It wasn't just a scarf; it was a bond.",
+        url: "/album/1/2.jpg",
+        date: "2012-01-16",
       },
       {
         id: 3,
-        title: "4",
-        date: "2022-10-10",
-        description:
-          "I wrote this album before I met you. I think it's the best album I've ever seen. I love the way you are, and I love the way you still have me.",
-
-        url: "https://res.cloudinary.com/dp7mjhcbk/image/upload/v1724082884/thumbnail_r78mhi.jpg",
-      },
-    
-    ],
-  },
-  {
-    id: 1,
-    title: "5",
-    description:
-      "I wrote this album before I met you. I think it's the best album I've ever seen. I love the way you are, and I love the way you still have me.",
-    images: [
-      {
-        id: 1,
-        title: "6",
-        date: "2022-10-10",
-        description:
-          "I wrote this album before I met you. I think it's the best album I've ever seen. I love the way you are, and I love the way you still have me.",
-
-        url: "https://res.cloudinary.com/dp7mjhcbk/image/upload/v1724082884/thumbnail_r78mhi.jpg",
-      },
-      {
-        id: 2,
-        title: "7",
-        date: "2022-10-10",
-        description:
-          "I wrote this album before I met you. I think it's the best album I've ever seen. I love the way you are, and I love the way you still have me.",
-
-        url: "https://res.cloudinary.com/dp7mjhcbk/image/upload/v1724096175/4_U_hbfijf.jpg",
-      },
-      {
-        id: 3,
-        title: "8",
-        date: "2022-10-10",
-        description:
-          "I wrote this album before I met you. I think it's the best album I've ever seen. I love the way you are, and I love the way you still have me.",
-
-        url: "https://res.cloudinary.com/dp7mjhcbk/image/upload/v1724082884/thumbnail_r78mhi.jpg",
+        title: "A New Beginning",
+        description: "Seeing your smile that day was like seeing the sun after a storm. I didn't know it yet, but you were becoming my everything.",
+        url: "/album/1/3.jpg",
+        date: "2012-01-17",
       },
       {
         id: 4,
-        title: "9",
-        date: "2022-10-10",
-        description:
-          "I wrote this album before I met you. I think it's the best album I've ever seen. I love the way you are, and I love the way you still have me.",
-
-        url: "https://res.cloudinary.com/dp7mjhcbk/image/upload/v1724096175/4_U_hbfijf.jpg",
+        title: "Safe Now",
+        description: "“You’re safe with me,” I said, and I meant it. Every word was a promise I intended to keep.",
+        url: "/album/1/4.jpg",
+        date: "2012-01-18",
       },
       {
         id: 5,
-        title: "10",
-        date: "2022-10-10",
-        description:
-          "I wrote this album before I met you. I think it's the best album I've ever seen. I love the way you are, and I love the way you still have me.",
-
-        url: "https://res.cloudinary.com/dp7mjhcbk/image/upload/v1724096175/4_U_hbfijf.jpg",
+        title: "A Silent Promise",
+        description: "I knew you saw it in my eyes. The promise that I would always be there for you, even if I couldn't say it out loud.",
+        url: "/album/1/5.jpg",
+        date: "2012-01-19",
       },
       {
         id: 6,
-        title: "11",
-        date: "2022-10-10",
-        description:
-          "I wrote this album before I met you. I think it's the best album I've ever seen. I love the way you are, and I love the way you still have me.",
-
-        url: "https://res.cloudinary.com/dp7mjhcbk/image/upload/v1724082884/thumbnail_r78mhi.jpg",
+        title: "Family",
+        description: "Under the same roof, we became a family. Not by blood, but by the unspoken love that grew between us.",
+        url: "/album/1/6.webp",
+        date: "2012-01-20",
       },
       {
         id: 7,
-        title: "12",
-        date: "2022-10-10",
-        description:
-          "I wrote this album before I met you. I think it's the best album I've ever seen. I love the way you are, and I love the way you still have me.",
-
-        url: "https://res.cloudinary.com/dp7mjhcbk/image/upload/v1724082884/thumbnail_r78mhi.jpg",
-      },
-      {
-        id: 8,
-        title: "13",
-        date: "2022-10-10",
-        description:
-          "I wrote this album before I met you. I think it's the best album I've ever seen. I love the way you are, and I love the way you still have me.",
-
-        url: "https://res.cloudinary.com/dp7mjhcbk/image/upload/v1724082884/thumbnail_r78mhi.jpg",
+        title: "Together",
+        description: "Every day with you, our lives became more connected. I couldn't imagine my world without you in it.",
+        url: "/album/1/7.jpg",
+        date: "2012-01-22",
       },
     ],
   },
   {
-    id: 1,
-    title: "14",
-    description:
-      "I wrote this album before I met you. I think it's the best album I've ever seen. I love the way you are, and I love the way you still have me.",
+    id: 2,
+    title: "Become Our Family",
+    description: "Those days, Mikasa, when we lived like a real family... I cherish every moment.",
     images: [
       {
         id: 1,
-        title: "Before I Met You",
-        date: "2022-10-10",
-        description:
-          "I wrote this album before I met you. I think it's the best album I've ever seen. I love the way you are, and I love the way you still have me.",
-
-        url: "https://res.cloudinary.com/dp7mjhcbk/image/upload/v1724082884/thumbnail_r78mhi.jpg",
+        title: "A New Home",
+        description: "Our house wasn't just a shelter. It was a place where we found a new kind of warmth, a new sense of belonging.",
+        url: "/album/2/1.webp",
+        date: "2013-02-10",
       },
       {
         id: 2,
-        title: "Before I Met You",
-        date: "2022-10-10",
-        description:
-          "I wrote this album before I met you. I think it's the best album I've ever seen. I love the way you are, and I love the way you still have me.",
-
-        url: "https://res.cloudinary.com/dp7mjhcbk/image/upload/v1724096175/4_U_hbfijf.jpg",
+        title: "Brother’s Laughter",
+        description: "Your smile always felt like home to me. Seeing you happy made me feel that maybe, just maybe, everything would be alright.",
+        url: "/album/2/2.jpg",
+        date: "2013-02-12",
       },
       {
         id: 3,
-        title: "Before I Met You",
-        date: "2022-10-10",
-        description:
-          "I wrote this album before I met you. I think it's the best album I've ever seen. I love the way you are, and I love the way you still have me.",
-
-        url: "https://res.cloudinary.com/dp7mjhcbk/image/upload/v1724082884/thumbnail_r78mhi.jpg",
+        title: "Quiet Moments",
+        description: "We didn't need words. Just being there, together, dreaming about a future where we could be free... that was enough.",
+        url: "/album/2/3.avif",
+        date: "2013-02-13",
       },
       {
         id: 4,
-        title: "Before I Met You",
-        date: "2022-10-10",
-        description:
-          "I wrote this album before I met you. I think it's the best album I've ever seen. I love the way you are, and I love the way you still have me.",
-
-        url: "https://res.cloudinary.com/dp7mjhcbk/image/upload/v1724096175/4_U_hbfijf.jpg",
+        title: "Comfort in the Dark",
+        description: "Whenever you had nightmares, I wanted to be the light that guided you back. To show you that you weren't alone.",
+        url: "/album/2/4.avif",
+        date: "2013-02-14",
+      },
+      {
+        id: 5,
+        title: "The Joy of Togetherness",
+        description: "Every small moment, every shared meal, every laugh—those were the times I felt truly alive, because you were there.",
+        url: "/album/2/5.jpg",
+        date: "2013-02-15",
+      },
+      {
+        id: 6,
+        title: "A Father’s Kindness",
+        description: "Watching you with my father, I felt like we were building a life—a life where pain was just a distant memory.",
+        url: "/album/2/6.jpg",
+        date: "2013-02-16",
+      },
+      {
+        id: 7,
+        title: "Watching Over",
+        description: "You always watched over us, Mikasa, but you never needed to. We were stronger because of you.",
+        url: "/album/2/7.webp",
+        date: "2013-02-17",
+      },
+      {
+        id: 8,
+        title: "Unspoken Bonds",
+        description: "We never needed to say it, did we? We were family, and nothing could change that.",
+        url: "/album/2/8.webp",
+        date: "2013-02-18",
+      },
+    ],
+  },
+  {
+    id: 3,
+    title: "After That Day",
+    description: "Everything changed after that day, Mikasa. But one thing remained the same—I would protect you, no matter what.",
+    images: [
+      {
+        id: 1,
+        title: "The Fall of Shiganshina",
+        description: "When the walls fell, so did our innocence. I knew from that moment, I had to fight for our future.",
+        url: "/album/3/1.jpg",
+        date: "2013-04-05",
+      },
+      {
+        id: 2,
+        title: "The Vow",
+        description: "“I will kill them all,” I said, and I meant every word. I couldn't stand the thought of losing you.",
+        url: "/album/3/2.jpg",
+        date: "2013-04-06",
+      },
+      {
+        id: 3,
+        title: "Shadows of the Past",
+        description: "Haunted by the memories of that day, we found comfort in each other’s presence. You were my solace.",
+        url: "/album/3/3.png",
+        date: "2013-04-07",
+      },
+      {
+        id: 4,
+        title: "Training Days",
+        description: "We trained together, side by side. Every moment spent, a silent vow to never be powerless again.",
+        url: "/album/3/4.jpg",
+        date: "2013-04-08",
+      },
+      {
+        id: 5,
+        title: "Hidden Fears",
+        description: "Even when I tried to be strong, you saw through my façade. You knew my fears, but you never turned away.",
+        url: "/album/3/5.jpg",
+        date: "2013-04-09",
+      },
+      {
+        id: 6,
+        title: "Under the Stars",
+        description: "Lying under the stars, I felt a sense of peace. As long as you were by my side, I knew we could face anything.",
+        url: "/album/3/6.jpg",
+        date: "2013-04-10",
+      },
+      {
+        id: 7,
+        title: "The First Titan Kill",
+        description: "Watching you fight, I realized you were stronger than I ever imagined. Together, we could survive this hell.",
+        url: "/album/3/7.jpg",
+        date: "2013-04-11",
+      },
+      {
+        id: 8,
+        title: "Reflections",
+        description: "In the quiet of the night, I reflected on what we had lost, and what we had gained. Our bond was unbreakable.",
+        url: "/album/3/8.avif",
+        date: "2013-04-12",
+      },
+    ],
+  },
+  {
+    id: 4,
+    title: "You and The Outside World",
+    description: "The outside world was nothing like I imagined, Mikasa. Freedom is a heavy burden, but I bear it for you.",
+    images: [
+      {
+        id: 1,
+        title: "Beyond the Walls",
+        description: "The vast world beyond was daunting, but it was also a promise of something greater—something worth fighting for.",
+        url: "/album/4/1.avif",
+        date: "2014-05-01",
+      },
+      {
+        id: 2,
+        title: "Eren’s Dream",
+        description: "All I ever wanted was to be free, but freedom came with a price. A price I was willing to pay.",
+        url: "/album/4/2.jpg",
+        date: "2014-05-02",
+      },
+      {
+        id: 3,
+        title: "Unseen Dangers",
+        description: "With every step we took, I could feel the weight of the world pressing down on us. Your worry mirrored my own.",
+        url: "/album/4/3.avif",
+        date: "2014-05-03",
+      },
+      {
+        id: 4,
+        title: "Confronting Reality",
+        description: "The truths we uncovered changed me, Mikasa. But through it all, you stayed by my side, my unwavering support.",
+        url: "/album/4/4.jpg",
+        date: "2014-05-04",
+      },
+      {
+        id: 5,
+        title: "The Truth of the World",
+        description: "I learned that the world was cruel, but also beautiful. And I wanted you to see that beauty, despite the pain.",
+        url: "/album/4/5.jpg",
+        date: "2014-05-05",
+      },
+      {
+        id: 6,
+        title: "Mikasa’s Plea",
+        description: "“Please, don’t go,” you whispered. But I had to, Mikasa. For you, for everyone.",
+        url: "/album/4/6.jpg",
+        date: "2014-05-06",
+      },
+      {
+        id: 7,
+        title: "The Weight of Freedom",
+        description: "Freedom isn't easy, but it's the only path I know. Even if it means losing everything, including you.",
+        url: "/album/4/7.jpg",
+        date: "2014-05-07",
+      },
+      {
+        id: 8,
+        title: "Uncertain Futures",
+        description: "We stood at the edge of the world, not knowing what the future held. But I wasn't afraid, because you were with me.",
+        url: "/album/4/8.avif",
+        date: "2014-05-08",
+      },
+    ],
+  },
+  {
+    id: 5,
+    title: "What am I to You?",
+    description: "I often wonder, Mikasa, if things could have been different. What if we had run away together, away from all of this?",
+    images: [
+      {
+        id: 1,
+        title: "The Question",
+        description: "“What am I to you?” I asked, my heart pounding. I needed to know, even if the answer broke me.",
+        url: "/album/5/1.webp",
+        date: "2015-06-10",
+      },
+      {
+        id: 2,
+        title: "The Confession",
+        description: "Your silence was deafening, Mikasa. I could see the words you wanted to say, but couldn't.",
+        url: "/album/5/2.avif",
+        date: "2015-06-11",
+      },
+      {
+        id: 3,
+        title: "A World of ‘What Ifs’",
+        description: "In another life, maybe you would have said the words that could have changed everything.",
+        url: "/album/5/3.jpg",
+        date: "2015-06-12",
+      },
+      {
+        id: 4,
+        title: "The Weight of Words",
+        description: "Every word left unsaid hung between us, heavy and unspoken. But in my heart, I knew.",
+        url: "/album/5/4.jpg",
+        date: "2015-06-13",
+      },
+      {
+        id: 5,
+        title: "Unspoken Feelings",
+        description: "Love, fear, hope—they were all there, in the spaces between our words. I felt them, just as you did.",
+        url: "/album/5/5.png",
+        date: "2015-06-14",
+      },
+      {
+        id: 6,
+        title: "The Space Between",
+        description: "There was always a space between us, filled with unspoken truths. But even that space couldn't keep us apart.",
+        url: "/album/5/6.png",
+        date: "2015-06-15",
+      },
+      {
+        id: 7,
+        title: "Alternate Paths",
+        description: "In another world, we would have been happy, Mikasa. I believe that with all my heart.",
+        url: "/album/5/7.jpg",
+        date: "2015-06-16",
+      },
+      {
+        id: 8,
+        title: "The Answer",
+        description: "Your silence was the answer I feared, but deep down, I knew. We were bound by more than words.",
+        url: "/album/5/8.avif",
+        date: "2015-06-17",
+      },
+    ],
+  },
+  {
+    id: 6,
+    title: "To You 2000 Years From Now",
+    description: "No matter where I am, no matter how much time passes, I will always love you, Mikasa. That will never change.",
+    images: [
+      {
+        id: 1,
+        title: "The Final Farewell",
+        description: "As you stood over me, I realized this love spanned lifetimes. Even if we were apart, I would always be yours.",
+        url: "/album/6/1.webp",
+        date: "2016-08-01",
+      },
+      {
+        id: 2,
+        title: "Memories of Us",
+        description: "In your dreams, I am still there, laughing, just out of reach. But my love for you is never out of reach.",
+        url: "/album/6/2.jpg",
+        date: "2016-08-02",
+      },
+      {
+        id: 3,
+        title: "The Scarf Once More",
+        description: "You hold the scarf close, a piece of me. And through it, I am with you, even if only in spirit.",
+        url: "/album/6/3.webp",
+        date: "2016-08-03",
+      },
+      {
+        id: 4,
+        title: "Eternal Love",
+        description: "“I’ll see you again,” you whisper, and I believe it. Our love defies even death.",
+        url: "/album/6/4.webp",
+        date: "2016-08-04",
+      },
+      {
+        id: 5,
+        title: "The Promise",
+        description: "We made a promise, one that transcends time. A love that death cannot erase.",
+        url: "/album/6/5.jpg",
+        date: "2016-08-05",
+      },
+      {
+        id: 6,
+        title: "Still Waiting",
+        description: "Years may pass, but your heart still waits for me. And mine, for you.",
+        url: "/album/6/6.webp",
+        date: "2016-08-06",
+      },
+      {
+        id: 7,
+        title: "A Lonely Grave",
+        description: "Flowers on my grave, a testament to a love that could never die. I am with you, always.",
+        url: "/album/6/7.avif",
+        date: "2016-08-07",
+      },
+      {
+        id: 8,
+        title: "Forever Yours",
+        description: "In life, in death, you are mine, Mikasa. And I am forever yours.",
+        url: "/album/6/8.png",
+        date: "2016-08-08",
       },
     ],
   },
 ];
+
+const albumId: Album[] = [
+  {
+    id: 1,
+    title: "Ketika Aku Bertemu Denganmu",
+    description: "Saat pertama kali aku melihatmu, Mikasa, aku tidak tahu bahwa hidup kita akan menjadi begitu terhubung.",
+    images: [
+      {
+        id: 1,
+        title: "Pertemuan Pertama",
+        description: "Saat mataku bertemu dengan matamu, sesuatu berubah. Aku merasa harus melindungimu, meski aku tidak mengerti alasannya.",
+        url: "/album/1/1.webp",
+        date: "2012-01-15",
+      },
+      {
+        id: 2,
+        title: "Syal Merah",
+        description: "Aku membalutkan syal merah itu padamu, dan saat itu juga, aku berjanji pada diriku sendiri untuk menjagamu tetap aman. Itu bukan hanya syal; itu adalah ikatan.",
+        url: "/album/1/2.jpg",
+        date: "2012-01-16",
+      },
+      {
+        id: 3,
+        title: "Awal Baru",
+        description: "Melihat senyummu hari itu seperti melihat matahari setelah badai. Aku belum tahu saat itu, tapi kau sedang menjadi segalanya bagiku.",
+        url: "/album/1/3.jpg",
+        date: "2012-01-17",
+      },
+      {
+        id: 4,
+        title: "Sekarang Kau Aman",
+        description: "“Kau aman bersamaku,” kataku, dan aku sungguh-sungguh. Setiap kata adalah janji yang ingin aku tepati.",
+        url: "/album/1/4.jpg",
+        date: "2012-01-18",
+      },
+      {
+        id: 5,
+        title: "Janji Diam-Diam",
+        description: "Aku tahu kau melihatnya di mataku. Janji bahwa aku akan selalu ada untukmu, bahkan jika aku tidak bisa mengatakannya dengan lantang.",
+        url: "/album/1/5.jpg",
+        date: "2012-01-19",
+      },
+      {
+        id: 6,
+        title: "Keluarga",
+        description: "Di bawah atap yang sama, kita menjadi keluarga. Bukan karena darah, tetapi karena cinta yang tumbuh di antara kita.",
+        url: "/album/1/6.webp",
+        date: "2012-01-20",
+      },
+      {
+        id: 7,
+        title: "Bersama",
+        description: "Setiap hari bersamamu, hidup kita menjadi lebih terhubung. Aku tidak bisa membayangkan duniaku tanpamu di dalamnya.",
+        url: "/album/1/7.jpg",
+        date: "2012-01-22",
+      },
+    ],
+  },
+  {
+    id: 2,
+    title: "Menjadi Keluarga Kami",
+    description: "Hari-hari itu, Mikasa, saat kita hidup seperti keluarga nyata... Aku menghargai setiap momen.",
+    images: [
+      {
+        id: 1,
+        title: "Rumah Baru",
+        description: "Rumah kita bukan hanya tempat berlindung. Itu adalah tempat di mana kita menemukan kehangatan baru, rasa memiliki yang baru.",
+        url: "/album/2/1.webp",
+        date: "2013-02-10",
+      },
+      {
+        id: 2,
+        title: "Tawa Saudara",
+        description: "Senyummu selalu terasa seperti rumah bagiku. Melihatmu bahagia membuatku merasa bahwa mungkin, hanya mungkin, semuanya akan baik-baik saja.",
+        url: "/album/2/2.jpg",
+        date: "2013-02-12",
+      },
+      {
+        id: 3,
+        title: "Momen Hening",
+        description: "Kita tidak butuh kata-kata. Hanya berada di sana, bersama, memimpikan masa depan di mana kita bisa bebas... itu sudah cukup.",
+        url: "/album/2/3.avif",
+        date: "2013-02-13",
+      },
+      {
+        id: 4,
+        title: "Kenyamanan di Kegelapan",
+        description: "Setiap kali kau mengalami mimpi buruk, aku ingin menjadi cahaya yang membimbingmu kembali. Menunjukkan bahwa kau tidak sendirian.",
+        url: "/album/2/4.avif",
+        date: "2013-02-14",
+      },
+      {
+        id: 5,
+        title: "Kebahagiaan Bersama",
+        description: "Setiap momen kecil, setiap makanan yang dibagi, setiap tawa—itu adalah saat-saat aku merasa benar-benar hidup, karena kau ada di sana.",
+        url: "/album/2/5.jpg",
+        date: "2013-02-15",
+      },
+      {
+        id: 6,
+        title: "Kebaikan Ayah",
+        description: "Melihatmu dengan ayahku, aku merasa seperti kita sedang membangun kehidupan—kehidupan di mana rasa sakit hanyalah kenangan yang jauh.",
+        url: "/album/2/6.jpg",
+        date: "2013-02-16",
+      },
+      {
+        id: 7,
+        title: "Menjaga",
+        description: "Kau selalu menjaga kami, Mikasa, tapi kau tak pernah perlu melakukannya. Kami lebih kuat karena dirimu.",
+        url: "/album/2/7.webp",
+        date: "2013-02-17",
+      },
+      {
+        id: 8,
+        title: "Ikatan Tak Terkatakan",
+        description: "Kita tak pernah perlu mengatakannya, bukan? Kita adalah keluarga, dan tidak ada yang bisa mengubah itu.",
+        url: "/album/2/8.webp",
+        date: "2013-02-18",
+      },
+    ],
+  },
+  {
+    id: 3,
+    title: "Setelah Hari Itu",
+    description: "Segalanya berubah setelah hari itu, Mikasa. Tapi satu hal tetap sama—aku akan melindungimu, apapun yang terjadi.",
+    images: [
+      {
+        id: 1,
+        title: "Kejatuhan Shiganshina",
+        description: "Saat dinding runtuh, begitu juga kepolosan kita. Aku tahu saat itu juga, aku harus berjuang untuk masa depan kita.",
+        url: "/album/3/1.jpg",
+        date: "2013-04-05",
+      },
+      {
+        id: 2,
+        title: "Sumpah",
+        description: "“Aku akan membunuh mereka semua,” kataku, dan aku sungguh-sungguh. Aku tidak tahan memikirkan kehilanganmu.",
+        url: "/album/3/2.jpg",
+        date: "2013-04-06",
+      },
+      {
+        id: 3,
+        title: "Bayangan Masa Lalu",
+        description: "Dihantui oleh kenangan hari itu, kita menemukan kenyamanan dalam keberadaan satu sama lain. Kau adalah pelipur laraku.",
+        url: "/album/3/3.png",
+        date: "2013-04-07",
+      },
+      {
+        id: 4,
+        title: "Hari-Hari Latihan",
+        description: "Kita berlatih bersama, berdampingan. Setiap momen yang dihabiskan, adalah janji diam untuk tidak pernah menjadi lemah lagi.",
+        url: "/album/3/4.jpg",
+        date: "2013-04-08",
+      },
+      {
+        id: 5,
+        title: "Ketakutan yang Tersembunyi",
+        description: "Bahkan ketika aku mencoba menjadi kuat, kau melihat melalui fasadku. Kau tahu ketakutanku, tapi kau tidak pernah berpaling.",
+        url: "/album/3/5.jpg",
+        date: "2013-04-09",
+      },
+      {
+        id: 6,
+        title: "Di Bawah Bintang-Bintang",
+        description: "Berbaring di bawah bintang-bintang, aku merasakan kedamaian. Selama kau di sisiku, aku tahu kita bisa menghadapi apapun.",
+        url: "/album/3/6.jpg",
+        date: "2013-04-10",
+      },
+      {
+        id: 7,
+        title: "Pembunuhan Titan Pertama",
+        description: "Melihatmu bertarung, aku sadar kau lebih kuat dari yang pernah aku bayangkan. Bersama, kita bisa bertahan di neraka ini.",
+        url: "/album/3/7.jpg",
+        date: "2013-04-11",
+      },
+      {
+        id: 8,
+        title: "Refleksi",
+        description: "Dalam kesunyian malam, aku merenungkan apa yang telah kita kehilangan, dan apa yang telah kita dapatkan. Ikatan kita tak tergoyahkan.",
+        url: "/album/3/8.avif",
+        date: "2013-04-12",
+      },
+    ],
+  },
+  {
+    id: 4,
+    title: "Kamu dan Dunia Luar",
+    description: "Dunia luar tidak seperti yang kubayangkan, Mikasa. Kebebasan adalah beban yang berat, tapi aku menanggungnya untukmu.",
+    images: [
+      {
+        id: 1,
+        title: "Di Luar Dinding",
+        description: "Dunia luas di luar sana menakutkan, tapi itu juga janji akan sesuatu yang lebih besar—sesuatu yang layak diperjuangkan.",
+        url: "/album/4/1.avif",
+        date: "2014-05-01",
+      },
+      {
+        id: 2,
+        title: "Mimpi Eren",
+        description: "Yang kuinginkan hanyalah kebebasan, tapi kebebasan datang dengan harga. Harga yang siap kubayar.",
+        url: "/album/4/2.jpg",
+        date: "2014-05-02",
+      },
+      {
+        id: 3,
+        title: "Bahaya yang Tak Terlihat",
+        description: "Dengan setiap langkah yang kita ambil, aku merasakan beban dunia menekan kita. Kekhawatiranmu mencerminkan kekhawatiranku.",
+        url: "/album/4/3.avif",
+        date: "2014-05-03",
+      },
+      {
+        id: 4,
+        title: "Menghadapi Kenyataan",
+        description: "Kebenaran yang kita ungkapkan mengubahku, Mikasa. Tapi melalui semua itu, kau tetap di sisiku, dukungan tak tergoyahku.",
+        url: "/album/4/4.jpg",
+        date: "2014-05-04",
+      },
+      {
+        id: 5,
+        title: "Kebenaran Dunia",
+        description: "Aku belajar bahwa dunia ini kejam, tapi juga indah. Dan aku ingin kau melihat keindahan itu, meskipun ada rasa sakit.",
+        url: "/album/4/5.jpg",
+        date: "2014-05-05",
+      },
+      {
+        id: 6,
+        title: "Permohonan Mikasa",
+        description: "“Tolong, jangan pergi,” kau berbisik. Tapi aku harus, Mikasa. Untukmu, untuk semua orang.",
+        url: "/album/4/6.jpg",
+        date: "2014-05-06",
+      },
+      {
+        id: 7,
+        title: "Beban Kebebasan",
+        description: "Kebebasan tidaklah mudah, tapi itu satu-satunya jalan yang aku tahu. Bahkan jika itu berarti kehilangan segalanya, termasuk dirimu.",
+        url: "/album/4/7.jpg",
+        date: "2014-05-07",
+      },
+      {
+        id: 8,
+        title: "Masa Depan yang Tidak Pasti",
+        description: "Kita berdiri di tepi dunia, tidak tahu apa yang akan terjadi. Tapi aku tidak takut, karena kau bersamaku.",
+        url: "/album/4/8.avif",
+        date: "2014-05-08",
+      },
+    ],
+  },
+  {
+    id: 5,
+    title: "Apa Aku Bagimu?",
+    description: "Sering kali aku bertanya-tanya, Mikasa, apakah segalanya bisa berbeda. Bagaimana jika kita melarikan diri bersama, jauh dari semua ini?",
+    images: [
+      {
+        id: 1,
+        title: "Pertanyaan",
+        description: "“Apa aku bagimu?” tanyaku, hatiku berdebar. Aku perlu tahu, meskipun jawabannya menyakitiku.",
+        url: "/album/5/1.webp",
+        date: "2015-06-10",
+      },
+      {
+        id: 2,
+        title: "Pengakuan",
+        description: "Kesunyianmu sangat menyakitkan, Mikasa. Aku bisa melihat kata-kata yang ingin kau katakan, tapi tidak bisa.",
+        url: "/album/5/2.avif",
+        date: "2015-06-11",
+      },
+      {
+        id: 3,
+        title: "Dunia 'Bagaimana Jika'",
+        description: "Di kehidupan lain, mungkin kau akan mengatakan kata-kata yang bisa mengubah segalanya.",
+        url: "/album/5/3.jpg",
+        date: "2015-06-12",
+      },
+      {
+        id: 4,
+        title: "Beratnya Kata-Kata",
+        description: "Setiap kata yang tak terucap tergantung di antara kita, berat dan tak terkatakan. Tapi dalam hatiku, aku tahu.",
+        url: "/album/5/4.jpg",
+        date: "2015-06-13",
+      },
+      {
+        id: 5,
+        title: "Perasaan yang Tak Terucap",
+        description: "Cinta, ketakutan, harapan—semua ada di sana, di antara kata-kata kita yang tidak terucap. Aku merasakannya, seperti halnya dirimu.",
+        url: "/album/5/5.png",
+        date: "2015-06-14",
+      },
+      {
+        id: 6,
+        title: "Ruang Di Antara Kita",
+        description: "Selalu ada ruang di antara kita, dipenuhi dengan kebenaran yang tidak terucap. Tapi bahkan ruang itu tidak bisa memisahkan kita.",
+        url: "/album/5/6.png",
+        date: "2015-06-15",
+      },
+      {
+        id: 7,
+        title: "Jalan Alternatif",
+        description: "Di dunia lain, kita akan bahagia, Mikasa. Aku percaya itu dengan sepenuh hatiku.",
+        url: "/album/5/7.jpg",
+        date: "2015-06-16",
+      },
+      {
+        id: 8,
+        title: "Jawaban",
+        description: "Kesunyianmu adalah jawaban yang kutakuti, tapi jauh di lubuk hati, aku tahu. Kita terikat oleh lebih dari sekadar kata-kata.",
+        url: "/album/5/8.avif",
+        date: "2015-06-17",
+      },
+    ],
+  },
+  {
+    id: 6,
+    title: "Untukmu 2000 Tahun Dari Sekarang",
+    description: "Tidak peduli di mana aku berada, tidak peduli berapa lama waktu berlalu, aku akan selalu mencintaimu, Mikasa. Itu tidak akan pernah berubah.",
+    images: [
+      {
+        id: 1,
+        title: "Perpisahan Terakhir",
+        description: "Saat kau berdiri di atasku, aku menyadari bahwa cinta ini melintasi banyak kehidupan. Bahkan jika kita terpisah, aku akan selalu menjadi milikmu.",
+        url: "/album/6/1.webp",
+        date: "2016-08-01",
+      },
+      {
+        id: 2,
+        title: "Kenangan Kita",
+        description: "Dalam mimpimu, aku masih di sana, tertawa, hanya di luar jangkauan. Tapi cintaku padamu tidak pernah jauh dari jangkauan.",
+        url: "/album/6/2.jpg",
+        date: "2016-08-02",
+      },
+      {
+        id: 3,
+        title: "Syal Sekali Lagi",
+        description: "Kau memegang syal itu erat-erat, sebuah bagian dari diriku. Dan melalui itu, aku bersamamu, meskipun hanya dalam roh.",
+        url: "/album/6/3.webp",
+        date: "2016-08-03",
+      },
+      {
+        id: 4,
+        title: "Cinta Abadi",
+        description: "“Aku akan bertemu denganmu lagi,” kau berbisik, dan aku percaya itu. Cinta kita menentang bahkan kematian.",
+        url: "/album/6/4.webp",
+        date: "2016-08-04",
+      },
+      {
+        id: 5,
+        title: "Janji",
+        description: "Kita membuat janji, yang melampaui waktu. Cinta yang tidak bisa dihapuskan oleh kematian.",
+        url: "/album/6/5.jpg",
+        date: "2016-08-05",
+      },
+      {
+        id: 6,
+        title: "Masih Menunggu",
+        description: "Bertahun-tahun mungkin berlalu, tapi hatimu masih menungguku. Dan hatiku, untukmu.",
+        url: "/album/6/6.webp",
+        date: "2016-08-06",
+      },
+      {
+        id: 7,
+        title: "Kuburan yang Sepi",
+        description: "Bunga-bunga di kuburanku, bukti cinta yang takkan pernah mati. Aku bersamamu, selalu.",
+        url: "/album/6/7.avif",
+        date: "2016-08-07",
+      },
+      {
+        id: 8,
+        title: "Selamanya Milikmu",
+        description: "Dalam hidup, dalam mati, kau adalah milikku, Mikasa. Dan aku selamanya milikmu.",
+        url: "/album/6/8.png",
+        date: "2016-08-08",
+      },
+    ],
+  },
+];
+
+
+const albumImage = ({ lang }: { lang: string }) => {    
+  if (lang === "id") {
+    return albumId;
+  } else if (lang === "en") {
+    return albumEn;
+  } else {
+    return albumEn;
+  }
+};
 
 export default albumImage;

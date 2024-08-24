@@ -6,12 +6,14 @@ import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
-const AlbumSection = () => {
+const AlbumSection = ({ lang }: { lang: string }) => {
   const [isVisible, setIsVisible] = useState<boolean>(false);
   const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
   const [currentAlbumIndex, setCurrentAlbumIndex] = useState<number>(0);
   const searchTerms = useSearchParams();
-  const search: string = searchTerms.get("search") || "";
+  const search: string = searchTerms.get("search") || "";    
+  const album = albumImage({ lang });
+  
 
   useEffect(() => {
     if (searchTerms.get("search")) {
@@ -31,7 +33,7 @@ const AlbumSection = () => {
 
   const handleNextImage = () => {
     const nextIndex = currentImageIndex + 1;
-    if (nextIndex < albumImage[currentAlbumIndex].images.length) {
+    if (nextIndex < album[currentAlbumIndex].images.length) {
       setCurrentImageIndex(nextIndex);
     }
   };
@@ -43,7 +45,7 @@ const AlbumSection = () => {
     }
   };
 
-  const filteredAlbums = albumImage
+  const filteredAlbums = album
     .map((album) => {
       if (album.title.toLowerCase().includes(search.toLowerCase())) {
         return album;
@@ -105,17 +107,17 @@ const AlbumSection = () => {
         <ModalShowImage
           isVisible={isVisible}
           currentImage={currentImageIndex + 1}
-          totalImage={albumImage[currentAlbumIndex].images.length}
-          date={albumImage[currentAlbumIndex].images[currentImageIndex].date}
-          image={albumImage[currentAlbumIndex].images[currentImageIndex].url}
+          totalImage={album[currentAlbumIndex].images.length}
+          date={album[currentAlbumIndex].images[currentImageIndex].date}
+          image={album[currentAlbumIndex].images[currentImageIndex].url}
           imageDescription={
-            albumImage[currentAlbumIndex].images[currentImageIndex].description
+            album[currentAlbumIndex].images[currentImageIndex].description
           }
-          albumDescription={albumImage[currentAlbumIndex].description}
+          albumDescription={album[currentAlbumIndex].description}
           titleImage={
-            albumImage[currentAlbumIndex].images[currentImageIndex].title
+            album[currentAlbumIndex].images[currentImageIndex].title
           }
-          albumSection={albumImage[currentAlbumIndex].title}
+          albumSection={album[currentAlbumIndex].title}
           onClose={handleCloseModal}
           onNext={handleNextImage}
           onPrev={handlePrevImage}
