@@ -2,7 +2,7 @@ import { Note } from "@/models/Note";
 
 const noteId: Note = {
   id: 1,
-  title: "Untukmu 2000 Tahun dari Sekarang",
+  title: "Untukmu 2000 Tahun lalu",
   description:
     `Aku tahu ini akan menjadi salah satu hal terberat yang pernah aku lakukan, dan mungkin yang tersulit untukmu terima. Tapi aku perlu kau mengerti, ini bukanlah keputusan yang aku buat dengan mudah. Aku harus pergi, harus melanjutkan perjalanan ini sendiri, demi kita semua, demi masa depan yang kita impikan. Ketika aku memandangmu, aku melihat seseorang yang lebih berharga dari apapun di dunia ini. Kau adalah rumahku, tempat di mana aku selalu ingin kembali. Tapi dunia ini, Mikasa, dunia ini jauh lebih rumit dan kejam dari apa yang bisa kita bayangkan.\n
 Sejak pertama kali kita bertemu, sejak hari di mana aku melingkarkan syal merah itu di lehermu, kau selalu menjadi kekuatanku. Kau yang memberiku alasan untuk terus maju, bahkan ketika semuanya terasa mustahil. Kau adalah cahaya di tengah kegelapan yang tak pernah berakhir ini. Tapi sekarang, aku harus memilih jalan yang akan memisahkan kita. Aku tak ingin kau terluka lebih dari ini, tak ingin melihatmu menangis karena aku. Aku ingin kau bahagia, meski itu berarti aku harus pergi.\n
